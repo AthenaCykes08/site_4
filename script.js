@@ -90,14 +90,14 @@ async function rasaInteraction(msg) {
             // Create the image
             let botImage = document.createElement('img');
             botImage.className = 'avatar';
-            botImage.src = "https://www.dropbox.com/scl/fi/vs33yan6wwkki9yvfzcxp/Alex.png?rlkey=v5572fcmcnpbx4gvqhigsw2nt&st=gbab0s1b&raw=1";
-            botImage.alt = "Alex Avatar";
+            botImage.src = "https://www.dropbox.com/scl/fi/zzbw46gau2dv501asfhk3/chatbot.png?rlkey=iotpyz7je8j3rrkyvx8xvskdy&st=lervrr4c&raw=1";
+            botImage.alt = "Virtual Assistant Avatar";
             
             // Create the text of the message
             let thinkingMessage = document.createElement("div");
             thinkingMessage.classList.add ("bot-message", "thinking");
             // Another way of adding changed anthropomorphism -> this has a ... while high anthro has 'alex is typing'
-            thinkingMessage.innerHTML = "<i>Alex is typing...</i>";
+            thinkingMessage.innerHTML = "<i>...</i>";
 
             // Add everything to the container
             thinkingContainer.appendChild(botImage);
