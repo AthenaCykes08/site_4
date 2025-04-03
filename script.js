@@ -1,20 +1,20 @@
 // TODO: remember that for site_2, THIS WILL NEED TO CHANGE TO THE ACTUAL SITE WHERE THE LOW ANTHRO BOT WILL BE KEPT
-let rasaServerUrl = "http://localhost:5005/webhooks/rest/webhook";
+let rasaServerUrl = "https://site-4-820874387134.europe-west2.run.app/webhooks/rest/webhook";
 
 // Potential chatbot responses, literally hardcoded in -> when working with real chatbot, will need to change this
 let responses = {
-    utter_greet: "Hello, I'm Alex, and I work for the Post Office. How can I assist you today?",
-    utter_anything_else: "Can I help with anything else?",
-    utter_ask_further: "That's great! What else can I help with?",
-    utter_confirm_further_help: "That's alright. If any other questions come to mind, feel free to ask them here and I will do my best to answer.",
+    utter_greet: "Hello, it’s your Post Office Virtual Assistant. What do you need help with?",
+    utter_anything_else: "Is there anything else?",
+    utter_ask_further: "What else do you need help with?",
+    utter_confirm_further_help: "If you have any other queries, send them here and I will attempt to provide you with an answer.",
     utter_repeat: "(SIMULATION MESSAGE: IF YOU HAVE SEEN THIS MESSAGE MULTIPLE TIMES, PLEASE USE THE 'SUGGESTED ANSWERS' BUTTONS)",
 
-    utter_is_suitable: "Does 1st Class Postage fit your needs? If not, going forward, I will assume that 2nd Class Postage is more suitable.",
-    utter_like_to_continue: " Would you like to continue?",
-    utter_like_to_purchase: " Is this correct?",
+    utter_is_suitable: "Is 1st Class Postage suitable? If not, the following interactions will proceed under the assumption that 2nd Class Postage has been chosen.",
+    utter_like_to_continue: "Continue?",
+    utter_like_to_purchase: "Is this correct?",
     utter_repeat_form: "(SIMULATION MESSAGE: IF YOU HAVE SEEN THIS MESSAGE MULTIPLE TIMES, PLEASE USE THE BUTTONS BELOW)",
 
-    utter_parcel_category: "If a parcel’s dimensions don’t exceed any of the above-mentioned measurements, they belong to that category. Which category would your parcel fit in?"
+    utter_parcel_category: "Parcel belongs to a category if its dimensions don’t exceed any of the above-mentioned measurements. Which category fits your parcel?"
 }
 
 document.addEventListener("DOMContentLoaded", async function () {
@@ -109,8 +109,8 @@ async function rasaInteraction(msg) {
             // Scroll to bottom
             chatBox.scrollTop = chatBox.scrollHeight;
 
-            // Wait for 2 seconds before replacing the "thinking" message
-            await new Promise(resolve => setTimeout(resolve, Math.max(((count(msg.text) / 5) * 1000), 4000)));
+            // The low anthropomorphism chatbots have a set waiting time between each message
+            await new Promise(resolve => setTimeout(resolve, 3500));
 
             // Remove the "thinking" message
             chatBox.removeChild(thinkingContainer);
